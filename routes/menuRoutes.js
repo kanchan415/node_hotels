@@ -27,4 +27,5 @@ router.get('/',async(req,res)=>{
         res.status(404).json({error: 'An error occurred while saving data'})
     }
 })
+//this is for testing purpose
 module.exports=router;
