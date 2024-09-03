@@ -10,8 +10,14 @@ app.use(bodyParser.json());
 
 const PORT=process.env.PORT || 3000
 
+const logRequest=(req,res,next)=>{
+    console.log(`${new Date().toLocaleString()} Request Made to: ${req.originalUrl}`);
+    next();
 
-app.get('/', (req, res) => {
+}
+
+
+app.get('/', logRequest,(req, res) => {
     res.send("This is my first server");
 });
 
